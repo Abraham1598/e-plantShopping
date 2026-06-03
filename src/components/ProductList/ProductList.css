@@ -1,0 +1,159 @@
+.products-page {
+  max-width: 1700px;
+  margin: auto;
+  padding: 50px 30px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.search-input {
+  width: 700px;
+  max-width: 100%;
+
+  padding: 18px 28px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 999px;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  background: white;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+  transition: .3s ease;
+}
+
+.search-input:focus {
+  box-shadow:
+    0 15px 35px rgba(46,125,50,.15);
+}
+
+.results-count {
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  color: #666;
+
+  font-weight: 600;
+
+  font-size: .95rem;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 45px;
+}
+
+.filter-buttons button {
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  background: white;
+
+  color: #444;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.05);
+
+  transition: .25s ease;
+}
+
+.filter-buttons button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
+}
+
+.active-filter {
+  background:
+    linear-gradient(
+      135deg,
+      #2e7d32,
+      #43a047
+    ) !important;
+
+  color: white !important;
+
+  box-shadow:
+    0 10px 25px rgba(46,125,50,.25) !important;
+}
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 22px;
+}
+
+/* Desktop normal */
+@media (max-width: 1500px) {
+  .product-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+}
+
+/* Notebook */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-page {
+    padding: 25px 15px;
+  }
+
+  .filter-buttons {
+    gap: 8px;
+  }
+
+  .filter-buttons button {
+    padding: 10px 14px;
+    font-size: .85rem;
+  }
+}

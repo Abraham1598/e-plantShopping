@@ -1,45 +1,57 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
-import React, { useState } from 'react';
-import ProductList from './ProductList';
-import './App.css';
-import AboutUs from './AboutUs';
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
-function App() {
-  
-  const [showProductList, setShowProductList] = useState(false);
+import Home from "./pages/Home";
 
-  const handleGetStartedClick = () => {
-    setShowProductList(true);
-  };
+import Cart from "./pages/Cart/Cart";
+import Favorites from "./pages/Favorites/Favorites";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import Checkout from "./pages/Checkout/Checkout";
+import Orders from "./pages/Orders/Orders";
 
+ function App() {
   return (
-    <div className="app-container">
-      <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
-        <div className="background-image"></div>
-        <div className="content">
-         <div className="landing_content">
-         <h1>Welcome To Paradise Nursery</h1>
-          <div className="divider"></div>
-          <p>Where Green Meets Serenity</p>
-         
-          <button className="get-started-button" onClick={handleGetStartedClick}>
-            Get Started
-          </button>
-         </div>
-          <div className="aboutus_container">
-          <AboutUs/>
-          </div>
-          </div>
+    <>
+      <Navbar />
 
-      </div>
-      <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList />
-      </div>
-    </div>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
+        <Route
+          path="/favorites"
+          element={<Favorites />}
+        />
+
+        <Route
+          path="/product/:name"
+          element={<ProductDetail />}
+        />
+
+        <Route
+          path="/checkout"
+          element={<Checkout />}
+        />
+
+        <Route
+          path="/orders"
+          element={<Orders />}
+        />
+      </Routes>
+
+      <Footer />
+    </>
   );
 }
 
-export default App;
-
-
-
+ export default App;

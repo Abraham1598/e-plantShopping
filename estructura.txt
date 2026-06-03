@@ -1,0 +1,96 @@
+Listado de rutas de carpetas para el volumen Sistema
+El número de serie del volumen es 00000298 4E7A:B73A
+C:\USERS\ABRAHAM CRUZ\DOCUMENTS\E-PLANTSHOPPING\SRC
+¦   AboutUs.css
+¦   AboutUs.jsx
+¦   App.css
+¦   App.jsx
+¦   index.css
+¦   main.jsx
+¦   
++---assets
+¦   ¦   react.svg
+¦   ¦   
+¦   +---plants
+¦           african-violet.jpg
+¦           aloe-vera.jpg
+¦           anthurium.jpg
+¦           areca-palm.jpg
+¦           basil.jpg
+¦           begonia.jpg
+¦           bougainvillea.jpg
+¦           boxwood.jpg
+¦           burros-tail.jpg
+¦           calendula.jpg
+¦           catnip.jpg
+¦           chamomile.jpg
+¦           chinese-evergreen.jpg
+¦           citronella.jpg
+¦           echeveria.jpg
+¦           echinacea.jpg
+¦           fondo.jpg
+¦           fondo2.jpg
+¦           gardenia.jpg
+¦           haworthia.jpg
+¦           hero-plants.jpg
+¦           hibiscus.jpg
+¦           hydrangea.jpg
+¦           jade-plant.jpg
+¦           japanese-maple.jpg
+¦           jasmine.jpg
+¦           lavender-repellent.jpg
+¦           lemon-balm.jpg
+¦           lemongrass.jpg
+¦           marigold.jpg
+¦           mint.jpg
+¦           monstera.jpg
+¦           orchid.jpg
+¦           panda-plant.jpg
+¦           peace-lily.jpg
+¦           philodendron.jpg
+¦           pothos.jpg
+¦           rosemary.jpg
+¦           rubber-plant.jpg
+¦           snake-plant.jpg
+¦           spider-plant.jpg
+¦           zz-plant.jpg
+¦           
++---components
+¦       CartItem.css
+¦       CartItem.jsx
+¦       Footer.css
+¦       Footer.jsx
+¦       Navbar.css
+¦       Navbar.jsx
+¦       ProductCard.css
+¦       ProductCard.jsx
+¦       ProductList.css
+¦       ProductList.jsx
+¦       SearchBar.jsx
+¦       
++---context
+¦       ThemeContext.jsx
+¦       
++---data
+¦       plants.js
+¦       
++---pages
+¦       About.jsx
+¦       Cart.jsx
+¦       Checkout.jsx
+¦       Favorites.jsx
+¦       Home.jsx
+¦       Orders.jsx
+¦       ProductDetail.css
+¦       ProductDetail.jsx
+¦       
++---redux
+¦       CartSlice.jsx
+¦       store.js
+¦       
++---styles
+¦       global.css
+¦       
++---utils
+        localStorage.js
+        
