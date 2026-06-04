@@ -1,11 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: JSON.parse(localStorage.getItem("cart")) || [],
+  items: JSON.parse(
+    localStorage.getItem("cart")
+  ) || [],
 };
 
 const saveCart = (items) => {
-  localStorage.setItem("cart", JSON.stringify(items));
+  localStorage.setItem(
+    "cart",
+    JSON.stringify(items)
+  );
 };
 
 const cartSlice = createSlice({
@@ -15,12 +20,15 @@ const cartSlice = createSlice({
 
   reducers: {
     addItem: (state, action) => {
-      const item = state.items.find(
-        (i) => i.id === action.payload.id
-      );
+      const existingItem =
+        state.items.find(
+          (item) =>
+            item.id ===
+            action.payload.id
+        );
 
-      if (item) {
-        item.quantity += 1;
+      if (existingItem) {
+        existingItem.quantity += 1;
       } else {
         state.items.push({
           ...action.payload,
@@ -32,20 +40,35 @@ const cartSlice = createSlice({
     },
 
     removeItem: (state, action) => {
-      state.items = state.items.filter(
-        (item) => item.id !== action.payload
-      );
+      state.items =
+        state.items.filter(
+          (item) =>
+            item.id !== action.payload
+        );
 
       saveCart(state.items);
     },
 
-    updateQuantity: (state, action) => {
-      const item = state.items.find(
-        (i) => i.id === action.payload.id
-      );
+    updateQuantity: (
+      state,
+      action
+    ) => {
+      const {
+        id,
+        quantity,
+      } = action.payload;
+
+      const item =
+        state.items.find(
+          (item) =>
+            item.id === id
+        );
 
       if (item) {
-        item.quantity = action.payload.quantity;
+        item.quantity =
+          quantity < 1
+            ? 1
+            : quantity;
       }
 
       saveCart(state.items);

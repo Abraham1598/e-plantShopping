@@ -22,7 +22,6 @@ function CartItem() {
   );
 
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const subtotal = cart.reduce(
@@ -32,7 +31,6 @@ function CartItem() {
   );
 
   const shipping = subtotal > 0 ? 10 : 0;
-
   const total = subtotal + shipping;
 
   if (cart.length === 0) {
@@ -50,13 +48,11 @@ function CartItem() {
 
   return (
     <div className="cart-container">
-      <h1 className="cart-title">
-        Shopping Cart
-      </h1>
+      <h1>Shopping Cart</h1>
 
       {cart.map((item) => (
         <div
-          key={item.name}
+          key={item.id}
           className="cart-item"
         >
           <img
@@ -84,13 +80,21 @@ function CartItem() {
 
             <div className="quantity-box">
               <button
+                className={`qty-btn ${
+                  item.quantity <= 1
+                    ? "disabled"
+                    : ""
+                }`}
+                disabled={
+                  item.quantity <= 1
+                }
                 onClick={() => {
                   if (
                     item.quantity > 1
                   ) {
                     dispatch(
                       updateQuantity({
-                        name: item.name,
+                        id: item.id,
                         quantity:
                           item.quantity - 1,
                       })
@@ -106,10 +110,11 @@ function CartItem() {
               </span>
 
               <button
+                className="qty-btn"
                 onClick={() =>
                   dispatch(
                     updateQuantity({
-                      name: item.name,
+                      id: item.id,
                       quantity:
                         item.quantity + 1,
                     })
@@ -122,13 +127,22 @@ function CartItem() {
 
             <button
               className="delete-btn"
-              onClick={() =>
-                dispatch(
-                  removeItem(item.name)
-                )
-              }
+              onClick={() => {
+                const confirmDelete =
+                  window.confirm(
+                    `Remove ${item.name} from cart?`
+                  );
+
+                if (
+                  confirmDelete
+                ) {
+                  dispatch(
+                    removeItem(item.id)
+                  );
+                }
+              }}
             >
-              Remove Item
+              🗑 Remove Item
             </button>
           </div>
         </div>

@@ -191,3 +191,54 @@
     height: 280px;
   }
 }
+
+.qty-btn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.qty-btn:hover {
+  transform: scale(1.1);
+}
+
+.qty-btn:active {
+  transform: scale(0.9);
+}
+
+.qty-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantity-value {
+  min-width: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.delete-btn {
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cart-item {
+  transition: all 0.3s ease;
+}
+
+.checkout-btn {
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.03);
+}
